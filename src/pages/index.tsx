@@ -30,7 +30,7 @@ const Home: NextPage = () => {
   const [results, setResults] = useState<ResultData[]>([]);
 
 
-  const delay = ms => new Promise(res => setTimeout(res, ms));
+  const delay = (ms: number) => new Promise(res => setTimeout(res, ms));
 
   async function handleSearch({ type, search }: SearchProp) {
 
