@@ -1,4 +1,9 @@
 /** @type {import('next').NextConfig} */
 module.exports = {
-  reactStrictMode: true,
+  reactStrictMode: false,
+  ignoreDuringBuilds: true,
+  ignoreBuildErrors: true,
+
+
+
 }

@@ -98,7 +98,8 @@ const Home: NextPage = () => {
         )
         }
 
-        {results.length > 0 && !isLoading && results.map(result => <Card key={result.id} type={watch('type')} isLoading={isLoading} data={result} />)}
+
+        {results && results.length > 0 && !isLoading && results.map(result => <Card key={result.id} type={watch('type')} isLoading={isLoading} data={result} />)}
 
 
 

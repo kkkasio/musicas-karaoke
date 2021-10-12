@@ -8,13 +8,13 @@ type CardProps = {
   isLoading: boolean;
   type?: 'cantor' | 'musica',
   data?: {
-    id: string;
+    id?: string;
     cantor: string;
     musica: string
   }
 }
 
-export function Card({ isLoading = false, data, type = 'musica' }: CardProps) {
+export function Card({ isLoading = false, data = { 'id': '1', 'cantor': '', 'musica': '' }, type = 'musica' }: CardProps) {
   return (
     <Box padding={6} boxShadow="lg" background="white" width="250px" >
       {isLoading && (
