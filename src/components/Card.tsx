@@ -1,22 +1,22 @@
-import { Box, Text, Link as ChakraLink } from "@chakra-ui/layout";
+import { Box, Text, Link as ChakraLink, BoxProps } from "@chakra-ui/react";
 import { SkeletonText } from "@chakra-ui/skeleton";
 import { transition } from "@chakra-ui/styled-system";
 import Link from 'next/link'
 import slugify from 'slugify'
 
-type CardProps = {
+interface CardProps extends BoxProps {
   isLoading: boolean;
   type?: 'cantor' | 'musica',
   data?: {
-    id?: string;
+    id: string;
     cantor: string;
     musica: string
   }
 }
 
-export function Card({ isLoading = false, data = { 'id': '1', 'cantor': '', 'musica': '' }, type = 'musica' }: CardProps) {
+export function Card({ isLoading = false, data, type = 'musica', ...rest }: CardProps) {
   return (
-    <Box padding={6} boxShadow="lg" background="white" width="250px" >
+    <Box padding={6} boxShadow="lg" background="white" width="250px" {...rest} >
       {isLoading && (
         <>
           <SkeletonText my={4} noOfLines={1} />
